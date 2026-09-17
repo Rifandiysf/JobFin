@@ -11,11 +11,14 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
 import { data } from "@/constants/sidebar-constant";
+import { useAuth } from "@/hooks/use-auth";
 import { CommandIcon } from "lucide-react";
 
 export function AppSidebar({
   ...props
 }) {
+  const { user } = useAuth()
+
   return (
     <Sidebar collapsible="offcanvas" {...props}>
       <SidebarHeader>
@@ -35,7 +38,11 @@ export function AppSidebar({
         <NavSecondary items={data.navSecondary} className="mt-auto" />
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={data.user} />
+        <NavUser user={{
+          name: user?.name || "User",
+          email: user?.email || "",
+          avatar: user?.avatarUrl || "NA"
+        }} />
       </SidebarFooter>
     </Sidebar>
   );

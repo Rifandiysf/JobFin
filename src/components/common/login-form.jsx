@@ -6,9 +6,11 @@ import { Input } from "@/components/ui/input";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { loginUser, loginWithGoogle } from "@/lib/service/auth";
+import { useAuth } from "@/hooks/use-auth";
 
 export function LoginForm ({ className, ...props }) {
   const navigate = useNavigate();
+  const { refetchUser } = useAuth()
   const [form, setForm] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false)
@@ -26,7 +28,7 @@ export function LoginForm ({ className, ...props }) {
       const { user, token } = await loginUser(form);
       localStorage.setItem("token", token);
       localStorage.setItem("user", JSON.stringify(user))
-      navigate("/dashboard")
+      refetchUser().then(() =>  navigate("/dashboard"))
     } catch (error) {
       setError(error.response?.data?.message || "Login failed, try again")
     } finally {

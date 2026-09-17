@@ -12,9 +12,11 @@ import { Input } from "@/components/ui/input"
 import { loginWithGoogle, registerUser } from "@/lib/service/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useAuth } from "@/hooks/use-auth";
 
 export function SignupForm({ className, ...props }) {
   const navigate = useNavigate();
+  const { refetchUser } = useAuth()
   const [form, setForm] = useState({ name: "", email: "", password: "" });
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false)
@@ -32,7 +34,7 @@ export function SignupForm({ className, ...props }) {
       const { user, token } = await registerUser(form);
       localStorage.setItem("token", token);
       localStorage.setItem("user", JSON.stringify(user))
-      navigate("/dashboard")
+      refetchUser().then(() => navigate("/dashboard"))
     } catch (error) {
       setError(error.response?.data?.message || "Register failed, try again")
     } finally {
