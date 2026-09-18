@@ -20,7 +20,7 @@ export const data = {
     navSecondary: [
         {
             title: "Settings",
-            url: "/setting",
+            url: "/Account",
             icon: (
                 <Settings2Icon />
             ),

@@ -93,8 +93,6 @@ export default function Dashboard() {
 
     return (
         <section className="flex flex-col gap-6 p-6">
-            <h1 className="text-2xl font-bold">Dashboard</h1>
-
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 *:data-[slot=card]:bg-linear-to-t *:data-[slot=card]:from-primary/5 *:data-[slot=card]:to-card *:data-[slot=card]:shadow-xs dark:*:data-[slot=card]:bg-card">
                 <SummaryCard
                     label="Total Applications"
