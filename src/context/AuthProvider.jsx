@@ -10,6 +10,11 @@ export function AuthProvider({ children }) {
         loadUser();
     }, []);
 
+    useEffect(() => {
+        if (!user?.theme) return;
+        document.documentElement.classList.toggle("dark", user.theme === "dark");
+    }, [user?.theme]);
+
     async function loadUser() {
         const token = localStorage.getItem("token");
         if (!token) {

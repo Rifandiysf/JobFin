@@ -14,20 +14,12 @@ import {
 } from "@/components/ui/select";
 import { useAuth } from "@/hooks/use-auth";
 import { updateTheme } from "@/lib/service/setting";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const Theme = () => {
     const [loading, setLoading] = useState(false);
     const [message, setMessage] = useState(null);
     const { user, refetchUser } = useAuth();
-
-    useEffect(() => {
-        if (!user?.theme) return;
-        document.documentElement.classList.toggle(
-            "dark",
-            user.theme === "dark"
-        );
-    }, [user?.theme]);
 
     async function handleChange(value) {
         setLoading(true);
@@ -36,16 +28,10 @@ const Theme = () => {
         try {
             await updateTheme(value);
             await refetchUser();
-            document.documentElement.classList.toggle(
-                "dark",
-                value === "dark"
-            );
         } catch (err) {
             setMessage({
                 type: "error",
-                text:
-                    err.response?.data?.message ||
-                    "Gagal memperbarui tema",
+                text: err.response?.data?.message || "Gagal memperbarui tema",
             });
         } finally {
             setLoading(false);
@@ -62,11 +48,7 @@ const Theme = () => {
                     </CardDescription>
                 </CardHeader>
                 <CardContent className="flex flex-col gap-3">
-                    <Select
-                        value={user?.theme || "light"}
-                        onValueChange={handleChange}
-                        disabled={loading}
-                    >
+                    <Select value={user?.theme || "light"} onValueChange={handleChange} disabled={loading}>
                         <SelectTrigger className="w-full sm:w-56">
                             <SelectValue />
                         </SelectTrigger>
@@ -75,11 +57,7 @@ const Theme = () => {
                             <SelectItem value="dark">Dark</SelectItem>
                         </SelectContent>
                     </Select>
-                    {message && (
-                        <p className="text-sm text-destructive">
-                            {message.text}
-                        </p>
-                    )}
+                    {message && <p className="text-sm text-destructive">{message.text}</p>}
                 </CardContent>
             </Card>
         </div>

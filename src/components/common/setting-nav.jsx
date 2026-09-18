@@ -15,16 +15,20 @@ export function SettingNav({
         <SidebarGroup>
             <SidebarGroupContent className="flex flex-col gap-2">
                 <SidebarMenu>
-                    {items.map((item) => (
-                        <SidebarMenuItem key={item.title}>
-                            <SidebarMenuButton asChild>
-                                <Link to={item.url} onClick={onClick}>
-                                    {item.icon}
-                                    <span>{item.title}</span>
-                                </Link>
-                            </SidebarMenuButton>
-                        </SidebarMenuItem>
-                    ))}
+                    {items.map((item) => {
+                        const isActive = location.pathname.startsWith(item.url)
+
+                        return (
+                            <SidebarMenuItem key={item.title}>
+                                <SidebarMenuButton asChild onClick={onClick} isActive={isActive} className={isActive ? "bg-primary! dark:text-background!" : ""}>
+                                    <Link to={item.url}>
+                                        {item.icon}
+                                        <span>{item.title}</span>
+                                    </Link>
+                                </SidebarMenuButton>
+                            </SidebarMenuItem>
+                        );
+                    })}
                 </SidebarMenu>
             </SidebarGroupContent>
         </SidebarGroup>

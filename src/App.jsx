@@ -13,6 +13,8 @@ import { AuthProvider } from "./context/AuthProvider";
 import SettingLayout from "./components/layout/setting-layout";
 import Theme from "./pages/Theme";
 import Account from "./pages/Account";
+import ApplicationDetail from "./pages/ApplicationDetail";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -32,6 +34,7 @@ function App() {
             <Route element={<AppLayout />}>
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/application" element={<Application />} />
+              <Route path="/application/:id" element={<ApplicationDetail />} />
             </Route>
 
             <Route element={<SettingLayout />}>
@@ -40,7 +43,7 @@ function App() {
             </Route>
           </Route>
 
-          {/* <Route path="*" element={<NotFound />} /> */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </AuthProvider>
     </BrowserRouter>

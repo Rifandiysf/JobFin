@@ -14,6 +14,11 @@ export async function createJob(payload) {
     return data.data
 }
 
+export async function getJobById(id) {
+    const { data } = await api.get(`/jobs/${id}`)
+    return data.data
+}
+
 export async function updateJob(id, payload) {
     const { data } = await api.put(`/jobs/${id}`, payload)
     return data.data

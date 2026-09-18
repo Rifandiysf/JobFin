@@ -2,33 +2,12 @@ import { EmptyState } from "@/components/dashboard/empty-state";
 import SummaryCard from "@/components/dashboard/summary-card";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
+import { chartConfig, STATUS_COLOR, STATUS_LABEL } from "@/constants/dashboard-constant";
 import { GetDashboardSummary } from "@/lib/service/dashboard";
 import { formatMount } from "@/lib/utils";
 import { useEffect, useState } from "react";
 import { Bar, BarChart, CartesianGrid, Cell, Line, LineChart, XAxis, YAxis } from "recharts";
 
-const STATUS_LABEL = {
-    applied: "Applied",
-    interview: "Interview",
-    offer: "Offer",
-    accepted: "Accepted",
-    rejected: "Rejected",
-};
-
-const STATUS_COLOR = {
-    applied: "#3b82f6",
-    interview: "#eab308",
-    offer: "#a855f7",
-    accepted: "#22c55e",
-    rejected: "#ef4444",
-};
-
-const chartConfig = {
-    count: { label: "Jumlah" },
-};
-
-// Bandingkan 2 bulan terakhir dari monthlyTrend. Return null kalau datanya belum cukup,
-// supaya SummaryCard tidak menampilkan badge tren yang tidak berdasar data nyata.
 function computeMonthlyTrend(monthlyTrend) {
     if (!monthlyTrend || monthlyTrend.length < 2) return null
 
