@@ -18,11 +18,11 @@ export const HomeAddressCard = ({ user, refetchUser }) => {
         try {
             await updateHomeAddress(homeAddress);
             await refetchUser();
-            setMessage({ type: "success", text: "Alamat rumah berhasil diperbarui" });
+            setMessage({ type: "success", text: "Home address updated successfully" });
         } catch (err) {
             setMessage({
                 type: "error",
-                text: err.response?.data?.message || "Gagal memperbarui alamat, coba cek kembali alamatnya",
+                text: err.response?.data?.message || "Failed to update address. Please check the address and try again.",
             });
         } finally {
             setLoading(false);
@@ -33,17 +33,17 @@ export const HomeAddressCard = ({ user, refetchUser }) => {
         <Card>
             <form onSubmit={handleSubmit}>
                 <CardHeader>
-                    <CardTitle>Alamat Rumah</CardTitle>
+                    <CardTitle>Home Address</CardTitle>
                     <CardDescription>
-                        Dipakai untuk menghitung jarak & rute otomatis ke tiap lamaran kerja.
+                        Used to automatically calculate the distance and route to each job application.
                     </CardDescription>
                 </CardHeader>
                 <CardContent className="flex flex-col">
                     <div className="flex flex-col gap-2 pb-3">
-                        <Label htmlFor="homeAddress">Alamat</Label>
+                        <Label htmlFor="homeAddress">Address</Label>
                         <Input
                             id="homeAddress"
-                            placeholder="Jl. Contoh No. 123, Kota, Provinsi"
+                            placeholder="123 Example Street, City, Province"
                             value={homeAddress}
                             onChange={(e) => setHomeAddress(e.target.value)}
                             required
@@ -52,7 +52,7 @@ export const HomeAddressCard = ({ user, refetchUser }) => {
 
                     {user?.homeLat && user?.homeLng && (
                         <p className="text-xs text-muted-foreground pb-3">
-                            Koordinat tersimpan: {Number(user.homeLat).toFixed(5)}, {Number(user.homeLng).toFixed(5)}
+                            Saved coordinates: {Number(user.homeLat).toFixed(5)}, {Number(user.homeLng).toFixed(5)}
                         </p>
                     )}
 
@@ -64,7 +64,7 @@ export const HomeAddressCard = ({ user, refetchUser }) => {
                 </CardContent>
                 <CardFooter>
                     <Button type="submit" disabled={loading}>
-                        {loading ? "Menyimpan..." : "Simpan Alamat"}
+                        {loading ? "Saving..." : "Save Address"}
                     </Button>
                 </CardFooter>
             </form>

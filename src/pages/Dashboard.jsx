@@ -43,7 +43,7 @@ export default function Dashboard() {
     }, [])
 
     if (loading) {
-        return <div className="p-6 text-muted-foreground">Loading Dashboard...</div>
+        return <div className="p-6 text-muted-foreground">Loading dashboard...</div>
     }
 
     if (!summary) {
@@ -80,39 +80,39 @@ export default function Dashboard() {
                     footerTitle={
                         applicationsTrend
                             ? applicationsTrend.direction === "down"
-                                ? "Menurun dari bulan lalu"
-                                : "Meningkat dari bulan lalu"
-                            : "Jumlah lamaran yang tercatat"
+                                ? "Down from last month"
+                                : "Up from last month"
+                            : "Total applications recorded"
                     }
-                    footerDescription="Akumulasi seluruh lamaran"
+                    footerDescription="All applications recorded"
                 />
                 <SummaryCard
                     label="Distance Average"
                     value={averageDistanceKm != null ? `${averageDistanceKm} km` : "-"}
-                    footerTitle="Rata-rata jarak ke lokasi kerja"
+                    footerTitle="Average distance to workplace"
                     footerDescription={
                         averageDistanceKm == null
-                            ? "Belum ada lamaran dengan alamat perusahaan"
-                            : "Dihitung dari lamaran dengan alamat lengkap"
+                            ? "No applications with a company address yet"
+                            : "Calculated from applications with complete addresses"
                     }
                 />
                 <SummaryCard
-                    label="Status Terbanyak"
+                    label="Most Common Status"
                     value={topStatus}
-                    footerTitle="Status dengan lamaran terbanyak"
-                    footerDescription="Bandingkan dengan chart distribusi di bawah"
+                    footerTitle="Status with the most applications"
+                    footerDescription="See the distribution chart below for details"
                 />
             </div>
 
             <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
                 <Card>
                     <CardHeader>
-                        <CardTitle>Lamaran per Status</CardTitle>
-                        <CardDescription>Distribusi status semua lamaran kamu</CardDescription>
+                        <CardTitle>Applications by Status</CardTitle>
+                        <CardDescription>Distribution of all application statuses</CardDescription>
                     </CardHeader>
                     <CardContent>
                         {statusChartData.length === 0 ? (
-                            <EmptyState text="Belum ada data status" />
+                            <EmptyState text="No status data yet" />
                         ) : (
                             <ChartContainer config={chartConfig} className="h-64 w-full">
                                 <BarChart data={statusChartData}>
@@ -133,12 +133,12 @@ export default function Dashboard() {
 
                 <Card>
                     <CardHeader>
-                        <CardTitle>Tren Bulanan</CardTitle>
-                        <CardDescription>Jumlah lamaran per bulan</CardDescription>
+                        <CardTitle>Monthly Trend</CardTitle>
+                        <CardDescription>Number of applications per month</CardDescription>
                     </CardHeader>
                     <CardContent>
                         {trendChartData.length === 0 ? (
-                            <EmptyState text="Belum ada data tren" />
+                            <EmptyState text="No trend data yet" />
                         ) : (
                             <ChartContainer config={chartConfig} className="h-64 w-full">
                                 <LineChart data={trendChartData}>

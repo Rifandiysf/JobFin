@@ -15,5 +15,5 @@ export const STATUS_COLOR = {
 };
 
 export const chartConfig = {
-    count: { label: "Jumlah" },
+    count: { label: "Total" },
 };

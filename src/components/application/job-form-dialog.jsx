@@ -18,12 +18,12 @@ export const JobFormDialog = ({
             <DialogContent className="sm:max-w-lg">
                 <DialogHeader>
                     <DialogTitle>
-                        {job ? "Edit Lamaran" : "Tambah Lamaran"}
+                        {job ? "Edit Application" : "Add Application"}
                     </DialogTitle>
                     <DialogDescription>
                         {job
-                            ? "Perbarui detail lamaran kerja kamu."
-                            : "Isi detail lamaran kerja baru."}
+                            ? "Update your job application detail"
+                            : "Add details for your new job application."}
                     </DialogDescription>
                 </DialogHeader>
 

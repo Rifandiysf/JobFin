@@ -19,7 +19,7 @@ const CallToAction = () => {
 
                 <div className="relative z-10 flex flex-col items-center gap-6">
                     <h2 className="text-4xl font-medium leading-tight tracking-tight text-white sm:text-6xl">
-                        Stop losing track of your job search.
+                        Stop losing track of your job applications.
                         <br />
                         Start organizing today.
                     </h2>

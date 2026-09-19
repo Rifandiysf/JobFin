@@ -8,16 +8,15 @@ export function DeleteJobDialog({ job, onOpenChange, onConfirm }) {
         <AlertDialog open={Boolean(job)} onOpenChange={onOpenChange}>
             <AlertDialogContent>
                 <AlertDialogHeader>
-                    <AlertDialogTitle>Hapus lamaran ini?</AlertDialogTitle>
+                    <AlertDialogTitle>Delete this application?</AlertDialogTitle>
                     <AlertDialogDescription>
-                        Lamaran ke <b>{job?.companyName}</b> untuk posisi <b>{job?.position}</b> akan dihapus permanen.
-                        Tindakan ini tidak bisa dibatalkan.
+                        Your application to <b>{job?.companyName}</b> or the <b>{job?.position}</b> position will be permanently deleted. This action cannot be undone.
                     </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>
-                    <AlertDialogCancel>Batal</AlertDialogCancel>
+                    <AlertDialogCancel>Cancel</AlertDialogCancel>
                     <AlertDialogAction onClick={onConfirm} className="bg-destructive hover:bg-destructive/90">
-                        Hapus
+                        Delete
                     </AlertDialogAction>
                 </AlertDialogFooter>
             </AlertDialogContent>

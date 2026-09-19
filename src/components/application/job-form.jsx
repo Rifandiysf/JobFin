@@ -100,7 +100,7 @@ const JobForm = ({ job, onOpenChange, onSuccess }) => {
             <div className="grid grid-cols-2 gap-4">
                 <div className="flex flex-col gap-2">
                     <Label htmlFor="companyName">
-                        Nama Perusahaan
+                        Company Name
                     </Label>
                     <Input
                         id="companyName"
@@ -111,7 +111,7 @@ const JobForm = ({ job, onOpenChange, onSuccess }) => {
                 </div>
                 <div className="flex flex-col gap-2">
                     <Label htmlFor="position">
-                        Posisi
+                        Position
                     </Label>
                     <Input
                         id="position"
@@ -154,7 +154,7 @@ const JobForm = ({ job, onOpenChange, onSuccess }) => {
 
                 <div className="flex flex-col gap-2">
                     <Label htmlFor="appliedDate">
-                        Tanggal Melamar
+                        Applied Date
                     </Label>
                     <Input
                         id="appliedDate"
@@ -167,11 +167,11 @@ const JobForm = ({ job, onOpenChange, onSuccess }) => {
 
             <div className="flex flex-col gap-2">
                 <Label htmlFor="companyAddress">
-                    Alamat Perusahaan
+                    Company Address
                 </Label>
                 <Input
                     id="companyAddress"
-                    placeholder="Untuk hitung jarak & rute otomatis"
+                    placeholder="Used to calculate distance and route automatically"
                     value={form.companyAddress}
                     onChange={handleChange}
                 />
@@ -179,7 +179,7 @@ const JobForm = ({ job, onOpenChange, onSuccess }) => {
 
             <div className="flex flex-col gap-2">
                 <Label htmlFor="notes">
-                    Catatan
+                    Notes
                 </Label>
                 <Textarea
                     id="notes"
@@ -195,17 +195,17 @@ const JobForm = ({ job, onOpenChange, onSuccess }) => {
                     variant="outline"
                     onClick={() => onOpenChange(false)}
                 >
-                    Batal
+                    Cancel
                 </Button>
                 <Button
                     type="submit"
                     disabled={loading}
                 >
                     {loading
-                        ? "Menyimpan..."
+                        ? "Saving..."
                         : isEdit
-                            ? "Simpan Perubahan"
-                            : "Tambah Lamaran"}
+                            ? "Save Changes"
+                            : "Add Application"}
                 </Button>
             </DialogFooter>
         </form>

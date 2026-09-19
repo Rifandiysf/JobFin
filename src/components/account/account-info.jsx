@@ -5,8 +5,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui
 export const AccountInfoCard = ({ user }) => (
     <Card>
         <CardHeader>
-            <CardTitle>Informasi Akun</CardTitle>
-            <CardDescription>Data akun yang kamu pakai untuk login</CardDescription>
+            <CardTitle>Account Information</CardTitle>
+            <CardDescription>Account information used to sign in</CardDescription>
         </CardHeader>
         <CardContent className="flex items-center gap-4">
             <Avatar className="size-16 rounded-lg">
@@ -19,7 +19,7 @@ export const AccountInfoCard = ({ user }) => (
                 <p className="font-medium text-foreground">{user?.name || "-"}</p>
                 <p className="text-sm text-muted-foreground">{user?.email}</p>
                 <Badge variant="secondary" className="w-fit">
-                    {user?.provider === "google" ? "Login via Google" : "Login manual"}
+                    {user?.provider === "google" ? "Signed in with Google" : "Signed in with email"}
                 </Badge>
             </div>
         </CardContent>

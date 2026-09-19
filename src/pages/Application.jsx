@@ -121,12 +121,12 @@ const Application = () => {
         <div className="flex flex-col gap-4 p-6">
             <div className="flex items-center justify-between">
                 <h1 className="text-2xl font-bold">
-                    Lamaran Kerja
+                    Job Applications
                 </h1>
 
                 <Button onClick={handleAdd}>
                     <PlusIcon className="mr-2 size-4" />
-                    Tambah Lamaran
+                    Add Application
                 </Button>
             </div>
 
@@ -134,7 +134,7 @@ const Application = () => {
                 <div className="relative flex-1">
                     <SearchIcon className="absolute left-2.5 top-2.5 size-4 text-muted-foreground" />
                     <Input
-                        placeholder="Cari nama perusahaan atau posisi..."
+                        placeholder="Search company or position..."
                         value={search}
                         onChange={handleSearchChange}
                         className="pl-8"
@@ -146,7 +146,7 @@ const Application = () => {
                     onValueChange={handleStatusChange}
                 >
                     <SelectTrigger className="w-full sm:w-48">
-                        <SelectValue placeholder="Filter status" />
+                        <SelectValue placeholder="Filter by status" />
                     </SelectTrigger>
 
                     <SelectContent>
@@ -166,13 +166,13 @@ const Application = () => {
                 <Table>
                     <TableHeader>
                         <TableRow>
-                            <TableHead>Perusahaan</TableHead>
-                            <TableHead>Posisi</TableHead>
+                            <TableHead>Company</TableHead>
+                            <TableHead>Position</TableHead>
                             <TableHead>Status</TableHead>
-                            <TableHead>Tanggal Lamar</TableHead>
-                            <TableHead>Jarak</TableHead>
+                            <TableHead>Applied Date</TableHead>
+                            <TableHead>Distance</TableHead>
                             <TableHead className="text-right">
-                                Aksi
+                                Action
                             </TableHead>
                         </TableRow>
                     </TableHeader>
@@ -183,7 +183,7 @@ const Application = () => {
                                     colSpan={6}
                                     className="py-8 text-center text-muted-foreground"
                                 >
-                                    Memuat data...
+                                    Loading applications...
                                 </TableCell>
                             </TableRow>
                         ) : jobs.length === 0 ? (
@@ -192,7 +192,7 @@ const Application = () => {
                                     colSpan={6}
                                     className="py-8 text-center text-muted-foreground"
                                 >
-                                    Belum ada lamaran yang cocok
+                                    No matching applications found
                                 </TableCell>
                             </TableRow>
                         ) : (jobs.map((job) => (

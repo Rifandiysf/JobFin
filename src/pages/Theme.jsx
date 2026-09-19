@@ -31,7 +31,7 @@ const Theme = () => {
         } catch (err) {
             setMessage({
                 type: "error",
-                text: err.response?.data?.message || "Gagal memperbarui tema",
+                text: err.response?.data?.message || "Failed to update theme",
             });
         } finally {
             setLoading(false);
@@ -42,9 +42,9 @@ const Theme = () => {
         <div className="p-6">
             <Card>
                 <CardHeader>
-                    <CardTitle>Tema Tampilan</CardTitle>
+                    <CardTitle>Appearance</CardTitle>
                     <CardDescription>
-                        Pilih tampilan terang atau gelap untuk aplikasi ini.
+                        Choose between light and dark mode for the application.
                     </CardDescription>
                 </CardHeader>
                 <CardContent className="flex flex-col gap-3">
