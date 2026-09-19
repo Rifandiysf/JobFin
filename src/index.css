@@ -8,7 +8,7 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme inline {
-  --font-heading: "Satoshi Variable", sans-serif;
+  --font-heading: "Satoshi-Variable", sans-serif;
   --font-sans: "Manrope Variable", sans-serif;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -121,7 +121,7 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border outline-ring/50 scroll-smooth scroll-mt-36;
   }
 
   html {

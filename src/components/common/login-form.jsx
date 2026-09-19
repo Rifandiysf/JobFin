@@ -98,7 +98,7 @@ export function LoginForm ({ className, ...props }) {
                 </Button>
               </Field>
               <FieldDescription className="text-center">
-                Don&apos;t have an account? <a href="#">Sign up</a>
+                Don&apos;t have an account? <Link to="/signup">Sign up</Link>
               </FieldDescription>
             </FieldGroup>
           </form>

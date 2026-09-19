@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/sidebar"
 import { data } from "@/constants/sidebar-constant";
 import { useAuth } from "@/hooks/use-auth";
-import { CommandIcon } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export function AppSidebar({
   ...props
@@ -25,10 +25,10 @@ export function AppSidebar({
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton asChild className="data-[slot=sidebar-menu-button]:p-1.5!">
-              <a href="#">
-                <CommandIcon className="size-5!" />
+              <Link to="#">
+                <img src="/jobfin.svg" className="size-5"/>
                 <span className="text-base font-bold">JobFin.</span>
-              </a>
+              </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
