@@ -9,10 +9,10 @@ export const AccountInfoCard = ({ user }) => (
             <CardDescription>Account information used to sign in</CardDescription>
         </CardHeader>
         <CardContent className="flex items-center gap-4">
-            <Avatar className="size-16 rounded-lg">
+            <Avatar className="size-16 rounded-full">
                 <AvatarImage src={user?.avatarUrl} alt={user?.name} />
-                <AvatarFallback className="rounded-lg text-lg">
-                    {user?.name?.[0]?.toUpperCase() || "U"}
+                <AvatarFallback className="rounded-full text-lg">
+                    {user?.name?.[0]?.toUpperCase() || "JF"}
                 </AvatarFallback>
             </Avatar>
             <div className="flex flex-col gap-1">

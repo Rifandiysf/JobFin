@@ -1,7 +1,7 @@
 import { changePassword } from "@/lib/service/setting";
 import { useState } from "react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../ui/card";
-import { Label } from "recharts";
+import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 
@@ -53,7 +53,7 @@ export const ChangePasswordCard = () => {
                     <CardTitle>Change Password</CardTitle>
                     <CardDescription>Make sure your new password is strong and hasn't been used before.</CardDescription>
                 </CardHeader>
-                <CardContent className="flex flex-col gap-4">
+                <CardContent className="flex flex-col gap-4 py-4">
                     <div className="flex flex-col gap-2">
                         <Label htmlFor="currentPassword">Current Password</Label>
                         <Input

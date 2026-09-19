@@ -13,3 +13,13 @@ export async function loginUser({ email, password }) {
 export async function loginWithGoogle() {
     window.location.href = `${import.meta.env.VITE_API_URL}/auth/google`
 }
+
+export async function forgotPassword(email) {
+    const { data } = await api.post("/auth/forgot-password", { email });
+    return data;
+}
+
+export async function resetPassword({ token, newPassword }) {
+    const { data } = await api.post("/auth/reset-password", { token, newPassword });
+    return data;
+}

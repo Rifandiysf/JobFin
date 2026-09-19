@@ -38,7 +38,7 @@ export const HomeAddressCard = ({ user, refetchUser }) => {
                         Used to automatically calculate the distance and route to each job application.
                     </CardDescription>
                 </CardHeader>
-                <CardContent className="flex flex-col">
+                <CardContent className="flex flex-col py-4">
                     <div className="flex flex-col gap-2 pb-3">
                         <Label htmlFor="homeAddress">Address</Label>
                         <Input
