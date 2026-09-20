@@ -14,35 +14,34 @@ const FEATURES = [
     title: "CRUD Tracking",
     description:
       "Log every application in seconds — company, position, status, and notes, all searchable and filterable.",
-    image: "/images/features/crud-tracking.png",
+    image: "/images/crud-tracking.svg",
   },
   {
     icon: RouteIcon,
     title: "Maps & Distance",
     description:
       "See exactly how far each company is from home, with real commute routes and travel time — before you say yes.",
-    image: "/images/features/maps-distance.png",
+    image: "/images/maps-distance.svg",
   },
   {
     icon: BarChart3Icon,
     title: "Dashboard Analytics",
     description:
       "Visualize your progress — applications by status, monthly trends, and average commute distance.",
-    image: "/images/features/dashboard-analytics.png",
+    image: "/images/dashboard-analytics.svg",
   },
   {
     icon: ShieldCheckIcon,
     title: "Secure Sign-in",
     description:
       "Sign in with Google in one click, or use email — your account is protected with secure authentication.",
-    image: "/images/features/secure-signin.png",
+    image: "/images/secure-sign-In.svg",
   },
 ];
 
 const Feature = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const active = FEATURES[activeIndex];
-  const ActiveIcon = active.icon;
 
   return (
     <section id="features" className="flex flex-col gap-6 px-24 my-36">
@@ -96,9 +95,13 @@ const Feature = () => {
 
         <div className="relative hidden flex-1 items-center justify-center overflow-hidden p-10 md:flex">
 
-          <div className="relative z-10 flex items-center gap-3 rounded-xl border border-white/10 bg-black/20 p-3 text-sm text-white/60">
-            <ActiveIcon className="size-4" />
-            Preview: {active.title}
+          <div className="relative hidden flex-1 items-center justify-center overflow-hidden p-10 md:flex">
+            <img
+              key={active.image}
+              src={active.image}
+              alt={active.title}
+              className="relative z-10 max-h-full max-w-full rounded-lg border border-white/10 object-contain shadow-2xl"
+            />
           </div>
         </div>
       </div>
