@@ -5,6 +5,7 @@ import { useLocation } from "react-router-dom";
 const pageTitles = {
   "/dashboard": "Dashboard",
   "/application": "Application",
+  "/get-help": "Get Help",
 }
 
 export function SiteHeader() {

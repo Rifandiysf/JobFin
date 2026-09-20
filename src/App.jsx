@@ -17,6 +17,9 @@ import ApplicationDetail from "./pages/ApplicationDetail";
 import NotFound from "./pages/NotFound";
 import ResetPassword from "./pages/ResetPassword";
 import ForgotPassword from "./pages/ForgotPassword";
+import Terms from "./pages/Terms";
+import Privacy from "./pages/Privacy";
+import GetHelp from "./pages/GetHelp";
 
 function App() {
   return (
@@ -24,6 +27,8 @@ function App() {
       <AuthProvider>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/privacy" element={<Privacy />} />
 
           <Route element={<GuestRoute />}>
             <Route path="/login" element={<LoginPage />} />
@@ -39,6 +44,7 @@ function App() {
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/application" element={<Application />} />
               <Route path="/application/:id" element={<ApplicationDetail />} />
+              <Route path="/get-help" element={<GetHelp />} />
             </Route>
 
             <Route element={<SettingLayout />}>

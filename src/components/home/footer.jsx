@@ -11,8 +11,8 @@ const navLinks = [
 ];
 
 const socialLinks = [
-    { label: "Instagram", href: "https://instagram.com/Rifandiysf" },
-    { label: "LinkedIn", href: "https://linkedin.com/in/rifandiyusuf" },
+    { label: "Terms of Service", href: "/terms" },
+    { label: "Privacy Policy", href: "/privacy" },
 ];
 
 const Footer = () => {
@@ -70,7 +70,7 @@ const Footer = () => {
 
                 <div className="flex flex-col gap-3">
                     <span className="mb-2 text-[11px] font-medium uppercase tracking-[0.14em] text-white/30">
-                        Social
+                        Legals
                     </span>
                     {socialLinks.map((s) => (
                         <a
