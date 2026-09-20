@@ -51,17 +51,17 @@ const Footer = () => {
     }, []);
 
     return (
-        <footer className="flex w-full flex-col overflow-hidden bg-foreground">
+        <footer className="flex w-full flex-col overflow-hidden bg-black">
             <div className="flex items-start justify-between border-b border-background/10 px-8 pb-10 pt-12 max-sm:flex-col max-sm:gap-10">
                 <div className="flex flex-col gap-3">
-                    <span className="mb-2 text-[11px] font-medium uppercase tracking-[0.14em] text-background/30">
+                    <span className="mb-2 text-[11px] font-medium uppercase tracking-[0.14em] text-white/30">
                         Navigation
                     </span>
                     {navLinks.map((link) => (
                         <Link
                             key={link.label}
                             to={link.href}
-                            className="text-sm font-medium text-background/70 transition-colors hover:text-background"
+                            className="text-sm font-medium text-white/70 transition-colors hover:text-white"
                         >
                             {link.label}
                         </Link>
@@ -69,7 +69,7 @@ const Footer = () => {
                 </div>
 
                 <div className="flex flex-col gap-3">
-                    <span className="mb-2 text-[11px] font-medium uppercase tracking-[0.14em] text-background/30">
+                    <span className="mb-2 text-[11px] font-medium uppercase tracking-[0.14em] text-white/30">
                         Social
                     </span>
                     {socialLinks.map((s) => (
@@ -78,7 +78,7 @@ const Footer = () => {
                             href={s.href}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group inline-flex items-center gap-1 text-sm font-medium text-background/70 transition-colors hover:text-background"
+                            className="group inline-flex items-center gap-1 text-sm font-medium text-white/70 transition-colors hover:text-white"
                         >
                             {s.label}
                             < ArrowUpRight
@@ -90,18 +90,18 @@ const Footer = () => {
                 </div>
 
                 <div className="flex flex-col items-end gap-3 max-sm:items-start">
-                    <span className="mb-2 text-[11px] font-medium uppercase tracking-[0.14em] text-background/30">
+                    <span className="mb-2 text-[11px] font-medium uppercase tracking-[0.14em] text-white/30">
                         Info
                     </span>
-                    <span className="text-sm font-medium text-background/70">
+                    <span className="text-sm font-medium text-white/70">
                         Bandung, Indonesia
                     </span>
-                    <span className="text-sm font-medium tabular-nums text-background/70">
+                    <span className="text-sm font-medium tabular-nums text-white/70">
                         {time}
                     </span>
                     <button
                         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                        className="mt-4 inline-flex items-center gap-1.5 text-[11px] font-medium uppercase tracking-widest text-background/50 transition-colors hover:text-background"
+                        className="mt-4 inline-flex items-center gap-1.5 text-[11px] font-medium uppercase tracking-widest text-white/50 transition-colors hover:text-white"
                     >
                         Back to top <ArrowUpRight size={12} />
                     </button>
@@ -109,7 +109,7 @@ const Footer = () => {
             </div>
 
             <div className="flex items-center justify-between px-8 py-4 max-sm:flex-col max-sm:items-start max-sm:gap-2">
-                <span className="text-[11px] font-medium uppercase tracking-widest text-background/30">
+                <span className="text-[11px] font-medium uppercase tracking-widest text-white/30">
                     Copyright &copy; {new Date().getFullYear()} JobFin. All rights reserved.
                 </span>
 
@@ -117,14 +117,14 @@ const Footer = () => {
                     href="https://instagram.com/Rifandiysf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[11px] font-medium uppercase tracking-widest text-background/30 transition-colors hover:text-background/60"
+                    className="text-[11px] font-medium uppercase tracking-widest text-white/30 transition-colors hover:text-white/60"
                 >
                     Built by Rifandi Yusuf
                 </a>
             </div>
 
-            <div className="flex w-full items-center gap-4 overflow-hidden px-8 py-4 text-background/10" >
-                <img src="/watermark.svg" className="w-full"/>
+            <div className="flex w-full items-center gap-4 overflow-hidden px-8 py-4 text-white/10" >
+                <img src="/watermark.svg" className="w-full opacity-55"/>
             </div>
         </footer>
     );

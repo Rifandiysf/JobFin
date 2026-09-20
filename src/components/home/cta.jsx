@@ -32,17 +32,15 @@ const CallToAction = () => {
                     <div className="flex flex-col gap-3 sm:flex-row">
                         <Button
                             asChild
-                            size="lg"
-                            className="bg-white font-medium text-black hover:bg-white/90"
+                            className="p-5 rounded-full text-lg bg-primary font-semibold text-black hover:bg-primary/90"
                         >
                             <Link to="/signup">Get Started Free</Link>
                         </Button>
 
                         <Button
                             asChild
-                            size="lg"
                             variant="secondary"
-                            className="bg-black font-medium text-white hover:bg-black/80"
+                            className="p-5 rounded-full text-lg bg-background font-semibold text-foreground hover:bg-background/80"
                         >
                             <Link to="/login">Login</Link>
                         </Button>
