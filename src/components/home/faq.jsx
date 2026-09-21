@@ -30,35 +30,41 @@ const FAQS = [
 
 const Faq = () => {
     return (
-        <section id="faq" className="grid grid-cols-1 gap-10 px-24 my-36 md:grid-cols-2">
-            <div className="flex flex-col gap-3">
-                <h2 className="text-4xl font-bold tracking-tight">
-                    Frequently Asked Questions
-                </h2>
-                <p className="text-muted-foreground">
-                    Discover the answers to your questions here, and get started with confidence.
-                </p>
-            </div>
+        <section
+            id="faq"
+            className="my-16 scroll-mt-24 px-4 sm:my-24 sm:px-8 md:px-16 lg:my-36 lg:px-24"
+        >
+            <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-8 sm:gap-10 md:grid-cols-2">
+                <div className="flex flex-col gap-2 sm:gap-3">
+                    <h2 className="text-balance text-3xl font-bold tracking-tight sm:text-4xl">
+                        Frequently Asked Questions
+                    </h2>
+                    <p className="text-sm text-muted-foreground sm:text-base">
+                        Discover the answers to your questions here, and get started with
+                        confidence.
+                    </p>
+                </div>
 
-            <Accordion type="single" collapsible className="flex flex-col gap-4">
-                {FAQS.map((faq, index) => (
-                    <AccordionItem
-                        key={index}
-                        value={`item-${index}`}
-                        className="rounded-xl border px-5 last:border-b data-[state=open]:border-foreground/20"
-                    >
-                        <AccordionTrigger className="group py-5 text-left text-base font-medium hover:no-underline [&>svg]:hidden">
-                            {faq.question}
-                            <span className="flex size-6 shrink-0 items-center justify-center rounded-full border text-muted-foreground transition-transform duration-200 group-data-[state=open]:rotate-45">
-                                <PlusIcon className="size-3.5" />
-                            </span>
-                        </AccordionTrigger>
-                        <AccordionContent className="text-muted-foreground">
-                            {faq.answer}
-                        </AccordionContent>
-                    </AccordionItem>
-                ))}
-            </Accordion>
+                <Accordion type="single" collapsible className="flex flex-col gap-3 sm:gap-4">
+                    {FAQS.map((faq) => (
+                        <AccordionItem
+                            key={faq.question}
+                            value={faq.question}
+                            className="rounded-xl border px-4 last:border-b data-[state=open]:border-foreground/20 sm:px-5"
+                        >
+                            <AccordionTrigger className="group gap-4 py-4 text-left text-sm font-medium hover:no-underline sm:py-5 sm:text-base [&>svg]:hidden">
+                                {faq.question}
+                                <span className="flex size-6 shrink-0 items-center justify-center rounded-full border text-muted-foreground transition-transform duration-200 group-data-[state=open]:rotate-45">
+                                    <PlusIcon className="size-3.5" />
+                                </span>
+                            </AccordionTrigger>
+                            <AccordionContent className="text-sm text-muted-foreground sm:text-base">
+                                {faq.answer}
+                            </AccordionContent>
+                        </AccordionItem>
+                    ))}
+                </Accordion>
+            </div>
         </section>
     );
 };

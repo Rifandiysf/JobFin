@@ -20,13 +20,18 @@ const STEPS = [
 
 const Flow = () => {
     return (
-        <section id="how-it-works" className="flex flex-col items-center gap-3 my-36 px-24 text-center">
-            <h1 className="text-3xl font-medium tracking-tight">How it works</h1>
-            <p className="max-w-md text-muted-foreground">
+        <section
+            id="how-it-works"
+            className="my-16 flex scroll-mt-24 flex-col items-center gap-3 px-4 text-center sm:my-24 sm:px-8 md:px-16 lg:my-36 lg:px-24"
+        >
+            <h2 className="text-2xl font-medium tracking-tight sm:text-3xl">
+                How it works
+            </h2>
+            <p className="max-w-md text-sm text-muted-foreground sm:text-base">
                 A simple 3-step process to organize your entire job applications
             </p>
 
-            <div className="relative mt-16 grid w-full max-w-4xl grid-cols-3 gap-6">
+            <div className="relative mt-10 grid w-full max-w-4xl grid-cols-1 gap-10 sm:mt-16 md:grid-cols-3 md:gap-6">
                 <div
                     className="pointer-events-none absolute left-[16.66%] right-[16.66%] top-9 hidden border-t-2 border-dashed border-primary/40 md:block"
                     aria-hidden="true"
@@ -36,13 +41,20 @@ const Flow = () => {
                     const Icon = step.icon;
 
                     return (
-                        <div key={step.title} className="relative z-10 flex flex-col items-center gap-4">
-                            <div className="flex size-18 items-center justify-center rounded-full border bg-background shadow-sm">
-                                <Icon className="size-7 text-foreground" />
+                        <div
+                            key={step.title}
+                            className="relative z-10 flex flex-col items-center gap-4"
+                        >
+                            <div className="flex size-14 items-center justify-center rounded-full border bg-background shadow-sm sm:size-16 md:size-18">
+                                <Icon className="size-6 text-foreground sm:size-7" />
                             </div>
-                            <div className="flex flex-col gap-1.5">
-                                <h3 className="text-lg font-semibold">{step.title}</h3>
-                                <p className="text-sm text-muted-foreground">{step.description}</p>
+                            <div className="flex max-w-xs flex-col gap-1.5">
+                                <h3 className="text-base font-semibold sm:text-lg">
+                                    {step.title}
+                                </h3>
+                                <p className="text-sm text-muted-foreground">
+                                    {step.description}
+                                </p>
                             </div>
                         </div>
                     );
